@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="576" tileheight="576">
+ <tileset firstgid="1" name="TileSet1" tilewidth="576" tileheight="576">
+  <image source="../Dropbox/GGJ13/Tiles/TileSet1.png" width="2307" height="1730"/>
+ </tileset>
+ <tileset firstgid="13" name="BlackTile" tilewidth="576" tileheight="576">
+  <image source="BlackTile.png" width="576" height="576"/>
+ </tileset>
+ <layer name="collision" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztzwENADAIwDAM4N/ubeykTSZgOzN7pN/5aPHR4qPFR4uPFh8tPlp8tPho8dHio8VHi48WHy0+Wny0+Gjx0eKjxUeLjxYfLT5arn1c6AGr9gn1
+  </data>
+ </layer>
+ <layer name="graphic" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzVmM2S40AIgx17vf/v/7ybObhK860EdJzLHKg4jt2NAAk6P7dt+/XF7dvTfj/tcdN2seqZE3Z338t+AMche0793gf3H8H3U/ZVoz967XwkDhcv7u8w7sYHrsV1q1jx+YQz4VDslR8TO7BOuk44XS5cTR4Bx1XH/HTxZE0d5nddR2tjEit958JxmPwnfnR1wb103SonD9w/sE63LzmScGiMr300ptMYTurN1TBrm5xgPit+sFZWOKG11emF46zGLmkIPyueu/pOdT/hLGvH+cIcuFrn+xMcJ6413q/kyfHFxWe65hRH4ixzsoqpM6exWluqiYnnVV9ivTo878CkNfeufFDDnJY5PlV4Ol2fasIKDtVd5x8x6H4ubqu9KeXqFRyOs+p30kdi2bE271V1Q45O+kcVP80P/VScrj5ZH1W+HDbXEy9THG7dKx+pv53mvstNNwvrnspF6pSLC/PB2KZ5wfmhfSXxXu+f8lnF+WHuu9y6ukpxdjGk76v8ph4mnnXW4SB2rbMd125Or3isuZ/6m87OFQ63vtNflw8+4+Z3nW/uYHA4Kv5VMSUufk+647TU1YHrTwkH901+T831TMc5h6PiRldXKZ5Oy5yfKT/UtDSTP7b/8+B0bMKPE9dVfFeNfp1bjj19p+50OJy+pLnK6VTVL+8acWnc0/mcPHe56TT1DpcYL87eqziq2BCD0+xujdV8OP3kfKVY0tmzq6nq3DvB1Z0NeJ3ywWeqGcn1xnRW4Uy1og2MvePJdG6vfO60njP+uX2Og6uVy+eqrvTeKo5X8U5q3j3nzqPEoDh05lcNdzP/ik34Ta1wdZTW7XCszs2Vuf59bp/7otMP8rPaw+FIOdHfmW/GKtWSmyepj0dYh7Oi9hHiSHkjN6c9hT6saFXSL2J1PE+xS747/yf81niu6oG+c31POKo5IfFIfUy9sNOrih+uh13rTOb2qsZZ04ptpV7oZ/I/zXUORxc75Rp97nKQ5pVKlzgbKi8cDvaPpJ3Xd8bIxdflxT3r3lV/UlwTz10cHJaVmqks/YeXuE/tYf9I/WXSK7o6dHrT6VA1c3Y4XOyZVzcj3jn/pdqtcPA64ahmmpV+Np0p+DvPfpUmd/lIdTjpbS5fjBFjX/2npfhcrBI/nJ4mv3WvSrc0torF9QeNH+cPx8k94EhaO7F3zcidkWMfOP4+7fsXtz9P+wdL9h/s
+  </data>
+ </layer>
+</map>
