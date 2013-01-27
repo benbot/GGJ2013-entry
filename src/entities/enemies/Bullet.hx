@@ -32,6 +32,8 @@ class Bullet extends Entity
 		
 		graphic = tempImage;
 		
+		layer = 1;
+		
 		setHitbox(tempImage.scaledWidth, tempImage.scaledHeight);
 		
 		collidable = true;

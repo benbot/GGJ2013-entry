@@ -45,11 +45,11 @@ class Player extends Entity
 		x = posX;
 		y = posY;
 		
-		setMask(new Pixelmask(Assets.baby));
-		
 		type = "player";
 		
 		layer = 0;
+		
+		setHitbox(64, 64);
 		
 		collidable = true;
 		
@@ -65,7 +65,7 @@ class Player extends Entity
 		this.x += (speedVec.x * HXP.elapsed) * x;
 		this.y += (speedVec.y * HXP.elapsed) * y;
 		
-		if (collideTypes("level", x, y) != null)
+		if (collideTypes("levdel", x, y) != null)
 		{
 			this.x = tempX; 
 			this.y = tempY;

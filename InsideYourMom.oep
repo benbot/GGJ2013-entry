@@ -16,7 +16,7 @@
     <Width>2048</Width>
     <Height>2048</Height>
   </LevelMaximumSize>
-  <Filename>C:\Users\Ben Botwin\Documents\Projects\InsideYourMom\InsideYourMom.oep</Filename>
+  <Filename>C:\Users\Max's Steam\Documents\Projects\Games\InsideYourMom\InsideYourMom.oep</Filename>
   <AngleMode>Radians</AngleMode>
   <CameraEnabled>false</CameraEnabled>
   <CameraSize>
@@ -71,13 +71,13 @@
         <Width>64</Width>
         <Height>64</Height>
       </TileSize>
-      <TileSep>1</TileSep>
+      <TileSep>0</TileSep>
     </Tileset>
   </Tilesets>
   <EntityDefinitions>
     <EntityDefinition Name="Player" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
       <Size>
-        <Width>128</Width>
+        <Width>64</Width>
         <Height>128</Height>
       </Size>
       <Origin>

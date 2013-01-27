@@ -1,7 +1,7 @@
 package world;
 
 import com.haxepunk.World;
-import com.haxepunk.tmx.TmxEntity;
+import entities.enemies.Turret;
 import entities.Player;
 import util.Level;
 
@@ -13,14 +13,15 @@ import util.Level;
 class LevelOne extends World
 {	
 	var go:Level;
+	public var player:Player;
 	
 	public function new(mapName:String) 
 	{
 		super();
 		
-		
-		go = new Level(Assets.lvl, Assets.tileSet1);
+		go = new Level(Assets.lvl, Assets.tileSet1, this);
+		add(new Turret(0, 0));
 		add(go);
-		add(new Player(300, 300));
+		
 	}
 }

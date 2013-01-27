@@ -6,7 +6,7 @@ import com.haxepunk.graphics.Spritemap;
 import com.haxepunk.math.Vector;
 import com.haxepunk.HXP;
 import com.haxepunk.Sfx;
-import world.TestWorld;
+import world.LevelOne;
 
 /**
  * ...
@@ -33,6 +33,7 @@ class Turret extends Entity
 		sprite.add("stand", [8], 0, false);
 		graphic = sprite;
 		sprite.play("stand");
+		layer = 1;
 		toss = new Sfx(Assets.turretToss);
 	}
 	
@@ -43,7 +44,7 @@ class Turret extends Entity
 	
 	private function makeDirectionVector()
 	{
-		bulletDirectionVec = new Vector(cast(HXP.world, TestWorld).player.x - x, cast(HXP.world, TestWorld).player.y - y);
+		bulletDirectionVec = new Vector(cast(HXP.world, LevelOne).player.x - x, cast(HXP.world, LevelOne).player.y - y);
 		bulletDirectionVec.normalize(1);
 	}
 	
