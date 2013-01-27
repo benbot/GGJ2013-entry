@@ -43,8 +43,12 @@ class Assets {
 			
 			resourceClasses.set ("graphics/baby.png", NME_graphics_baby_png);
 			resourceTypes.set ("graphics/baby.png", "image");
+			resourceClasses.set ("graphics/PUKEsprite.png", NME_graphics_pukesprite_png);
+			resourceTypes.set ("graphics/PUKEsprite.png", "image");
 			resourceClasses.set ("graphics/rock.png", NME_graphics_rock_png);
 			resourceTypes.set ("graphics/rock.png", "image");
+			resourceClasses.set ("graphics/sideBaby.png", NME_graphics_sidebaby_png);
+			resourceTypes.set ("graphics/sideBaby.png", "image");
 			resourceClasses.set ("graphics/TileSet1.png", NME_graphics_tileset1_png);
 			resourceTypes.set ("graphics/TileSet1.png", "image");
 			resourceClasses.set ("graphics/tilesprite.png", NME_graphics_tilesprite_png);
@@ -53,8 +57,16 @@ class Assets {
 			resourceTypes.set ("graphics/TurretSheet.png", "image");
 			resourceClasses.set ("graphics/walkingBaby.png", NME_graphics_walkingbaby_png);
 			resourceTypes.set ("graphics/walkingBaby.png", "image");
-			resourceClasses.set ("maps/lvl1.tmx", NME_maps_lvl1_tmx);
-			resourceTypes.set ("maps/lvl1.tmx", "text");
+			resourceClasses.set ("graphics/Wall2.png", NME_graphics_wall2_png);
+			resourceTypes.set ("graphics/Wall2.png", "image");
+			resourceClasses.set ("graphics/Wall4.png", NME_graphics_wall4_png);
+			resourceTypes.set ("graphics/Wall4.png", "image");
+			resourceClasses.set ("sound/button.wav", NME_sound_button_wav);
+			resourceTypes.set ("sound/button.wav", "sound");
+			resourceClasses.set ("sound/hurglurgl-throw.wav", NME_sound_hurglurgl_throw_wav);
+			resourceTypes.set ("sound/hurglurgl-throw.wav", "sound");
+			resourceClasses.set ("maps/lvl1.oel", NME_maps_lvl1_oel);
+			resourceTypes.set ("maps/lvl1.oel", "text");
 			resourceClasses.set ("gfx/debug/console_debug.png", NME_gfx_debug_console_debug_png);
 			resourceTypes.set ("gfx/debug/console_debug.png", "image");
 			resourceClasses.set ("gfx/debug/console_logo.png", NME_gfx_debug_console_logo_png);

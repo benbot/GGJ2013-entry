@@ -23,7 +23,7 @@
 	<assets path="assets/graphics" rename="graphics" include="*.png" />
 	<assets path="assets/sound" rename="sound" include="*.wav" />
 	<assets path="assets/music" rename="music" include="*.mp3" />
-	<assets path="assets/maps" rename="maps" include="*.tmx" />
+	<assets path="assets/maps" rename="maps" include="*.oel" />
 	
 	<!-- DLLs -->
 	<ndll name="std" />

@@ -94,9 +94,19 @@ class ApplicationMain {
             return Assets.getBitmapData ("graphics/baby.png");
          
 		
+		if (inName=="graphics/PUKEsprite.png")
+			 
+            return Assets.getBitmapData ("graphics/PUKEsprite.png");
+         
+		
 		if (inName=="graphics/rock.png")
 			 
             return Assets.getBitmapData ("graphics/rock.png");
+         
+		
+		if (inName=="graphics/sideBaby.png")
+			 
+            return Assets.getBitmapData ("graphics/sideBaby.png");
          
 		
 		if (inName=="graphics/TileSet1.png")
@@ -119,9 +129,29 @@ class ApplicationMain {
             return Assets.getBitmapData ("graphics/walkingBaby.png");
          
 		
-		if (inName=="maps/lvl1.tmx")
+		if (inName=="graphics/Wall2.png")
 			 
-			 return Assets.getText ("maps/lvl1.tmx");
+            return Assets.getBitmapData ("graphics/Wall2.png");
+         
+		
+		if (inName=="graphics/Wall4.png")
+			 
+            return Assets.getBitmapData ("graphics/Wall4.png");
+         
+		
+		if (inName=="sound/button.wav")
+			 
+            return Assets.getSound ("sound/button.wav");
+         
+		
+		if (inName=="sound/hurglurgl-throw.wav")
+			 
+            return Assets.getSound ("sound/hurglurgl-throw.wav");
+         
+		
+		if (inName=="maps/lvl1.oel")
+			 
+			 return Assets.getText ("maps/lvl1.oel");
          
 		
 		if (inName=="gfx/debug/console_debug.png")
@@ -184,12 +214,18 @@ class ApplicationMain {
 }
 
 class NME_graphics_baby_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
+class NME_graphics_pukesprite_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
 class NME_graphics_rock_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
+class NME_graphics_sidebaby_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
 class NME_graphics_tileset1_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
 class NME_graphics_tilesprite_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
 class NME_graphics_turretsheet_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
 class NME_graphics_walkingbaby_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
-class NME_maps_lvl1_tmx extends nme.utils.ByteArray { }
+class NME_graphics_wall2_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
+class NME_graphics_wall4_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
+class NME_sound_button_wav extends nme.media.Sound { }
+class NME_sound_hurglurgl_throw_wav extends nme.media.Sound { }
+class NME_maps_lvl1_oel extends nme.utils.ByteArray { }
 class NME_gfx_debug_console_debug_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
 class NME_gfx_debug_console_logo_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
 class NME_gfx_debug_console_output_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
