@@ -47,12 +47,14 @@ class Assets {
 			resourceTypes.set ("graphics/rock.png", "image");
 			resourceClasses.set ("graphics/TileSet1.png", NME_graphics_tileset1_png);
 			resourceTypes.set ("graphics/TileSet1.png", "image");
+			resourceClasses.set ("graphics/tilesprite.png", NME_graphics_tilesprite_png);
+			resourceTypes.set ("graphics/tilesprite.png", "image");
 			resourceClasses.set ("graphics/TurretSheet.png", NME_graphics_turretsheet_png);
 			resourceTypes.set ("graphics/TurretSheet.png", "image");
 			resourceClasses.set ("graphics/walkingBaby.png", NME_graphics_walkingbaby_png);
 			resourceTypes.set ("graphics/walkingBaby.png", "image");
-			resourceClasses.set ("maps/walking area.tmx", NME_maps_walking_area_tmx);
-			resourceTypes.set ("maps/walking area.tmx", "text");
+			resourceClasses.set ("maps/lvl1.tmx", NME_maps_lvl1_tmx);
+			resourceTypes.set ("maps/lvl1.tmx", "text");
 			resourceClasses.set ("gfx/debug/console_debug.png", NME_gfx_debug_console_debug_png);
 			resourceTypes.set ("gfx/debug/console_debug.png", "image");
 			resourceClasses.set ("gfx/debug/console_logo.png", NME_gfx_debug_console_logo_png);

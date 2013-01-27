@@ -104,6 +104,11 @@ class ApplicationMain {
             return Assets.getBitmapData ("graphics/TileSet1.png");
          
 		
+		if (inName=="graphics/tilesprite.png")
+			 
+            return Assets.getBitmapData ("graphics/tilesprite.png");
+         
+		
 		if (inName=="graphics/TurretSheet.png")
 			 
             return Assets.getBitmapData ("graphics/TurretSheet.png");
@@ -114,9 +119,9 @@ class ApplicationMain {
             return Assets.getBitmapData ("graphics/walkingBaby.png");
          
 		
-		if (inName=="maps/walking area.tmx")
+		if (inName=="maps/lvl1.tmx")
 			 
-			 return Assets.getText ("maps/walking area.tmx");
+			 return Assets.getText ("maps/lvl1.tmx");
          
 		
 		if (inName=="gfx/debug/console_debug.png")
@@ -181,9 +186,10 @@ class ApplicationMain {
 class NME_graphics_baby_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
 class NME_graphics_rock_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
 class NME_graphics_tileset1_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
+class NME_graphics_tilesprite_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
 class NME_graphics_turretsheet_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
 class NME_graphics_walkingbaby_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
-class NME_maps_walking_area_tmx extends nme.utils.ByteArray { }
+class NME_maps_lvl1_tmx extends nme.utils.ByteArray { }
 class NME_gfx_debug_console_debug_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
 class NME_gfx_debug_console_logo_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
 class NME_gfx_debug_console_output_png extends nme.display.BitmapData { public function new () { super (0, 0); } }

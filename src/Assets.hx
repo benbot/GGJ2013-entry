@@ -12,6 +12,7 @@ class Assets
 	public static var turret:String = "graphics/TurretSheet.png";
 	public static var tileSet1:String = "graphics/TileSet1.png";
 	public static var rock:String = "graphics/rock.png";
+	public static var lvl:String = "maps/lvl1.tmx";
 	
 	public function new() 
 	{

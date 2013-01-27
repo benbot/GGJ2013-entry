@@ -1,5 +1,6 @@
 package entities;
 
+import browser.display.Sprite;
 import com.haxepunk.Entity;
 import com.haxepunk.graphics.Image;
 import com.haxepunk.graphics.Spritemap;
@@ -22,6 +23,7 @@ class Player extends Entity
 	private var speedVec:Vector;
 	private static inline var incrament:Float = 0.03;
 	private var sprite:Spritemap;
+	private var sprite2:Spritemap;
 	
 	public function new(posX:Int, posY:Int) 
 	{
@@ -45,7 +47,12 @@ class Player extends Entity
 		
 		type = "player";
 		
+		layer = 0;
+		
 		collidable = true;
+		
+		HXP.camera.x = this.halfWidth;
+		HXP.camera.y = this.halfHeight;
 	}
 	
 	private inline function move(x:Float, y:Float)
@@ -161,6 +168,21 @@ class Player extends Entity
 		{
 			trace("dead");
 			//TODO HXP.world = new GameOver();
+		}
+		
+		if (collideTypes("solid", x, y) != null)
+		{
+			trace("wall");
+		}
+		
+		if (moveVec.x == 1)
+		{
+			HXP.camera.x = (x + halfWidth) - HXP.screen.width / 2;
+		}
+		
+		if (moveVec.y == 1)
+		{
+			HXP.camera.y = (y + halfHeight) - HXP.screen.height / 2 ;
 		}
 		
 		super.update();

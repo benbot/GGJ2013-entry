@@ -5,6 +5,7 @@ import com.haxepunk.graphics.Image;
 import com.haxepunk.math.Vector;
 import com.haxepunk.World;
 import com.haxepunk.HXP;
+import entities.Player;
 import world.TestWorld;
 
 /**
@@ -12,8 +13,12 @@ import world.TestWorld;
  * @author Benjamin Botwin
  */
 
+/*class Chaser extends Entity
+{*/
+
 class Chaser extends Entity
 {
+
 	private var speed = 10;
 	private var incrament = -0.5;
 	private var directionVec:Vector;
@@ -45,10 +50,10 @@ class Chaser extends Entity
 		directionVec = new Vector(targetVec.x - x, targetVec.y - y);
 		directionVec.normalize(1);
 	}
-	/*
+	
 	private inline function handleDirection()
 	{
-		if (rightBool)
+		if (leftBool)
 		{	
 			if (moveVec.x != 1)
 			{
@@ -70,7 +75,7 @@ class Chaser extends Entity
 			}
 		}
 		
-		if (leftBool)
+		if (rightBool)
 		{
 			if (moveVec.x != -1)
 			{
@@ -92,7 +97,7 @@ class Chaser extends Entity
 			}
 		}
 		
-		if (downBool)
+		if (upBool)
 		{	
 			if (moveVec.y != 1)
 			{
@@ -113,7 +118,7 @@ class Chaser extends Entity
 			}
 		}
 		
-		if (upBool)
+		if (downBool)
 		{
 			if (moveVec.y != -1)
 			{
@@ -136,14 +141,14 @@ class Chaser extends Entity
 			}
 		}
 	}
-	*/
+	
 	private inline function move()
 	{
 		x += (speed * HXP.elapsed) * moveVec.x;
 		y += (speed * HXP.elapsed) * moveVec.y;
 	}
 	
-/*	private inline function updateControls()
+	private inline function updateControls()
 	{
 		if (targetVec.x > x)
 		{
@@ -175,17 +180,22 @@ class Chaser extends Entity
 			upBool = downBool = false;
 		}
 	}
-	*/
+	
 	override public function update():Void 
 	{
-		/*if (targetVec == null)
+		if (targetVec == null)
 		{
 			getPlayerDirVec();
 		}
 		
+		if (collidePoint(x, y, targetVec.x, targetVec.y))
+		{
+			targetVec = null;
+		}
+		
 		updateControls();
 		handleDirection();
-		move();*/
+		move();
 		
 		
 		super.update();
