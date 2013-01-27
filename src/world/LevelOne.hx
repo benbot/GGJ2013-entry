@@ -3,6 +3,7 @@ package world;
 import com.haxepunk.World;
 import com.haxepunk.tmx.TmxEntity;
 import entities.Player;
+import util.Level;
 
 /**
  * ...
@@ -10,25 +11,14 @@ import entities.Player;
  */
 
 class LevelOne extends World
-{
-	private var level:TmxEntity;
+{	
+	var go:Level;
 	
 	public function new(mapName:String) 
 	{
 		super();
 		
-		level = new TmxEntity(mapName);
-		
-		createMap();
-	}
-	
-	private function createMap()
-	{
-		level.loadGraphic(Assets.tileSet1, ["graphic"]);
-		
-		level.loadMask();
-		
-		add(level);
-		add(new Player(100, 100));
+		go = new Level(Assets.lvl, Assets.tileSet1);
+		add(go);
 	}
 }

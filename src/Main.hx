@@ -15,7 +15,7 @@ class Main extends Engine
 {
 	public static inline var screenX = 800;
 	public static inline var screenY = 600;
-	public static inline var clearColor = 0xdeadbeef;
+	public static inline var clearColor = 0x200220;
 	
 	public function new()
 	{
@@ -44,6 +44,6 @@ class Main extends Engine
 #end
 		HXP.screen.color = clearColor;
 		HXP.screen.scale = 1;
-		HXP.world = new TestWorld(); //TODO: Add a world... derp
+		HXP.world = new LevelOne(Assets.lvl); //TODO: Add a world... derp
 	}
 }

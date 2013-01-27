@@ -1,6 +1,5 @@
 package entities;
 
-import browser.display.Sprite;
 import com.haxepunk.Entity;
 import com.haxepunk.graphics.Image;
 import com.haxepunk.graphics.Spritemap;
@@ -33,10 +32,13 @@ class Player extends Entity
 		speedVec = new Vector(150, 150);
 		
 		sprite = new Spritemap(Assets.walkingBaby, 284, 421);
+		sprite2 = new Spritemap(Assets.sideBaby, 193, 421);
+		sprite2.scale = .2;
+		sprite2.add("walk", [0, 1, 2, 1], 4, true);
 		sprite.add("walkDown", [3, 5, 4, 5], 4, true);
 		sprite.add ("walkUp", [0, 2, 1, 2], 4, true);
 		sprite.add("stand", [5], 0, false);
-		sprite.scale = .3;
+		sprite.scale = .2;
 		graphic = sprite;
 		sprite.play("stand");
 		
@@ -57,8 +59,17 @@ class Player extends Entity
 	
 	private inline function move(x:Float, y:Float)
 	{
+		var tempX = this.x;
+		var tempY = this.y;
+		
 		this.x += (speedVec.x * HXP.elapsed) * x;
 		this.y += (speedVec.y * HXP.elapsed) * y;
+		
+		if (collideTypes("solid", x, y) != null)
+		{
+			this.x = tempX;
+			this.y = tempY;
+		}
 	}
 	
 	private inline function handleInput()
@@ -72,6 +83,9 @@ class Player extends Entity
 				{
 					moveVec.x = 1;
 				}
+				graphic = sprite2;
+				sprite2.flipped = false;
+				sprite2.play("walk");
 			}
 			
 		}
@@ -96,6 +110,9 @@ class Player extends Entity
 					moveVec.x = -1;
 				}
 			}
+			graphic = sprite2;
+			sprite2.flipped = true;
+			sprite2.play("walk");
 		}
 		else if(!(moveVec.x >= 0))
 		{
@@ -154,6 +171,7 @@ class Player extends Entity
 		
 		if (moveVec.x == 0 && moveVec.y == 0)
 		{
+			graphic = sprite;
 			sprite.play("stand");
 		}
 		
@@ -170,20 +188,8 @@ class Player extends Entity
 			//TODO HXP.world = new GameOver();
 		}
 		
-		if (collideTypes("solid", x, y) != null)
-		{
-			trace("wall");
-		}
-		
-		if (moveVec.x == 1)
-		{
-			HXP.camera.x = (x + halfWidth) - HXP.screen.width / 2;
-		}
-		
-		if (moveVec.y == 1)
-		{
-			HXP.camera.y = (y + halfHeight) - HXP.screen.height / 2 ;
-		}
+		HXP.camera.x = (x + halfWidth) - HXP.screen.width / 2;
+		HXP.camera.y = (y + halfHeight) - HXP.screen.height / 2 ;
 		
 		super.update();
 	}

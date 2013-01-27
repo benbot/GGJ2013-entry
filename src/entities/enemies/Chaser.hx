@@ -1,11 +1,10 @@
 package entities.enemies;
 
 import com.haxepunk.Entity;
-import com.haxepunk.graphics.Image;
 import com.haxepunk.math.Vector;
-import com.haxepunk.World;
 import com.haxepunk.HXP;
-import entities.Player;
+import com.haxepunk.tweens.misc.NumTween;
+import com.haxepunk.graphics.Image;
 import world.TestWorld;
 
 /**
@@ -13,21 +12,16 @@ import world.TestWorld;
  * @author Benjamin Botwin
  */
 
-/*class Chaser extends Entity
-{*/
-
 class Chaser extends Entity
 {
-
-	private var speed = 10;
-	private var incrament = -0.5;
+	private var targetVec:Vector;
 	private var directionVec:Vector;
 	private var moveVec:Vector;
-	private var targetVec:Vector;
-	private var leftBool:Bool = false;
-	private var rightBool:Bool = false;
-	private var upBool:Bool = false;
-	private var downBool:Bool = false;
+	private var speed = 200.0;
+	private var tweenX = true;
+	private var tweenY = true;
+	private var numTweenX:NumTween;
+	private var numTweenY:NumTween;
 	
 	public function new(x:Float, y:Float) 
 	{
@@ -36,169 +30,94 @@ class Chaser extends Entity
 		this.x = x;
 		this.y = y;
 		
-		var tempImage = new Image(Assets.baby);
+		graphic = new Image(Assets.baby);
 		
-		graphic = tempImage;
-		setHitbox(tempImage.width, tempImage.height);
+		setHitbox(64, 64);
 		
 		moveVec = new Vector();
+		directionVec = new Vector();
+		numTweenX = new NumTween();
+		numTweenY = new NumTween();
+		addTween(numTweenX);
+		addTween(numTweenY);
 	}
 	
-	private inline function getPlayerDirVec()
+	private function getPlayerVec()
 	{
-		targetVec = new Vector(cast(HXP.world, TestWorld).player.x, cast(HXP.world, TestWorld).player.y);
-		directionVec = new Vector(targetVec.x - x, targetVec.y - y);
+		targetVec = new Vector(cast(HXP.world, TestWorld).player.x - x, cast(HXP.world, TestWorld).player.y - y);
+		directionVec = new Vector(targetVec.x, targetVec.y);
 		directionVec.normalize(1);
 	}
 	
-	private inline function handleDirection()
+	private function move()
 	{
-		if (leftBool)
-		{	
-			if (moveVec.x != 1)
-			{
-				moveVec.x += incrament;
-				if (moveVec.x > 1)
-				{
-					moveVec.x = 1;
-				}
-			}
-			
-		}
-		else if(!(moveVec.x <= 0))
-		{
-			moveVec.x -= incrament;
-			
-			if (moveVec.x < 0)
-			{
-				moveVec.x = 0;
-			}
-		}
-		
-		if (rightBool)
-		{
-			if (moveVec.x != -1)
-			{
-				moveVec.x -= incrament;
-				
-				if (moveVec.x < -1)
-				{
-					moveVec.x = -1;
-				}
-			}
-		}
-		else if(!(moveVec.x >= 0))
-		{
-			moveVec.x += incrament;
-			
-			if ( moveVec.x > 0)
-			{
-				moveVec.x = 0;
-			}
-		}
-		
-		if (upBool)
-		{	
-			if (moveVec.y != 1)
-			{
-				moveVec.y += incrament;
-				if (moveVec.y > 1)
-				{
-					moveVec.y = 1;
-				}
-			}
-		}
-		else if(!(moveVec.y <= 0))
-		{
-			moveVec.y -= incrament;
-			
-			if (moveVec.y < 0)
-			{
-				moveVec.y = 0;
-			}
-		}
-		
-		if (downBool)
-		{
-			if (moveVec.y != -1)
-			{
-				moveVec.y -= incrament;
-				
-				if (moveVec.y < -1)
-				{
-					moveVec.y = -1;
-				}
-
-			}
-		}
-		else if(!(moveVec.y >= 0))
-		{
-			moveVec.y += incrament;
-			
-			if (moveVec.y > 0)
-			{
-				moveVec.y = 0;
-			}
-		}
-	}
-	
-	private inline function move()
-	{
-		x += (speed * HXP.elapsed) * moveVec.x;
-		y += (speed * HXP.elapsed) * moveVec.y;
-	}
-	
-	private inline function updateControls()
-	{
-		if (targetVec.x > x)
-		{
-			leftBool = false;
-			rightBool = true;
-		}
-		else if (targetVec.x < x)
-		{
-			rightBool = false;
-			leftBool = true;
-		}
-		else
-		{
-			rightBool = leftBool = false;
-		}
-		
-		if (targetVec.y > y)
-		{
-			upBool = false;
-			downBool = true;
-		}
-		else if (targetVec.y < y)
-		{
-			downBool = false;
-			upBool = true;
-		}
-		else 
-		{
-			upBool = downBool = false;
-		}
+		x += (speed * HXP.elapsed) * directionVec.x * moveVec.x;
+		y += (speed * HXP.elapsed) * directionVec.y * moveVec.y;
 	}
 	
 	override public function update():Void 
 	{
 		if (targetVec == null)
 		{
-			getPlayerDirVec();
+			getPlayerVec();
 		}
 		
+		if (tweenX && targetVec.x > x)
+		{
+			numTweenX.tween(moveVec.x, 1, .3);
+			numTweenX.start();
+			tweenX = false;
+		}
+		else if (tweenX && targetVec.x < x)
+		{
+			numTweenX.tween(moveVec.x, -1, .3);
+			numTweenX.start();
+			tweenX = false;
+		}
+		else if (!tweenX && !numTweenX.active)
+		{
+			numTweenX.tween(moveVec.x, 0, .3);
+			numTweenX.start();
+			//tweenX = true;
+		}
+		
+		if (tweenY && targetVec.y > y)
+		{
+			numTweenY.tween(moveVec.y, 1, .3);
+			numTweenY.start();
+			tweenY= false;
+		}
+		else if (tweenY && targetVec.y < y)
+		{
+			numTweenY.tween(moveVec.y, -1, .3);
+			numTweenY.start();
+			tweenY = false;
+		}
+		else if (!tweenY && !numTweenY.active)
+		{
+			//tweenY = true;
+		}
+		
+		moveVec.x = numTweenX.value;
+		moveVec.y = numTweenY.value;
+	
+		
 		if (collidePoint(x, y, targetVec.x, targetVec.y))
+		{
+			numTweenY.tween(moveVec.y, 0, .3);
+			numTweenX.tween(moveVec.x, 0, .3);
+			numTweenX.start();
+			numTweenY.start();
+		}
+		
+		if (moveVec.x == 0 && moveVec.y == 0)
 		{
 			targetVec = null;
 		}
 		
-		updateControls();
-		handleDirection();
 		move();
-		
 		
 		super.update();
 	}
 	
-}
+	}

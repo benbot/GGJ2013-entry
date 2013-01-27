@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="20" height="20" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="tilesprite" tilewidth="64" tileheight="64" spacing="1">
+  <image source="../Dropbox/GGJ13/Tiles/tilesprite.png" width="389" height="389"/>
+ </tileset>
+ <tileset firstgid="37" name="Wall2" tilewidth="64" tileheight="64" spacing="1">
+  <image source="Wall2.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="38" name="Wall4" tilewidth="64" tileheight="64" spacing="1">
+  <image source="Wall4.png" width="64" height="64"/>
+ </tileset>
+ <layer name="collide" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgYCSAYYCQOmIxOeZRCka6efSMK3LMo7Z/aWXeYA9XavuXWuYNtnAaKeFHawwAnw4A4Q==
+  </data>
+ </layer>
+ <layer name="graphic" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJytk0sOgCAMBeEEUHXjZ6v3P6KY0KQ2D6rAYhIIvgkt1TvnvEHIWN8xe+Ks8Ne3iMwDFfYtvpjzU4Z9ZNSwGfdjn1xrosjMlfuFQp7AGfL1MAGf9b41IvBxvdx3q+YIeljqn/QiFymX5RvRU+lr7SOaP3LvHuq9nhM+q72HzpUgkRk5f8jXM3/W/4aQcxHUusX3Bek7Elcn66D30NzIwhfV
+  </data>
+ </layer>
+ <objectgroup name="entities" width="20" height="20">
+  <object x="1442" y="132"/>
+  <object type="turret" x="262" y="632" width="126" height="114"/>
+  <object type="player" x="140" y="1022" width="136" height="124"/>
+  <object type="turret" x="882" y="892" width="136" height="90"/>
+  <object type="turret" x="886" y="384" width="140" height="84"/>
+  <object type="door" x="572" y="-2" width="130" height="124"/>
+ </objectgroup>
+</map>

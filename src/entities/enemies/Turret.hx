@@ -5,6 +5,7 @@ import com.haxepunk.graphics.Image;
 import com.haxepunk.graphics.Spritemap;
 import com.haxepunk.math.Vector;
 import com.haxepunk.HXP;
+import com.haxepunk.Sfx;
 import world.TestWorld;
 
 /**
@@ -17,6 +18,7 @@ class Turret extends Entity
 	private var bulletDirectionVec:Vector;
 	private var coolDown:Float = 1.475;
 	private var sprite:TurretSpriteMap;
+	private var toss:Sfx;
 	
 	public function new(x:Int, y:Int) 
 	{
@@ -31,11 +33,12 @@ class Turret extends Entity
 		sprite.add("stand", [8], 0, false);
 		graphic = sprite;
 		sprite.play("stand");
+		toss = new Sfx(Assets.turretToss);
 	}
 	
 	public function shoot()
 	{
-		//SHXP.world.add(new Bullet(x, y, bulletDirectionVec));
+		HXP.world.add(new Bullet(x, y, bulletDirectionVec, Assets.rock));
 	}
 	
 	private function makeDirectionVector()
@@ -50,6 +53,7 @@ class Turret extends Entity
 		{
 			makeDirectionVector();
 			sprite.play("throw");
+			toss.play();
 			coolDown = 2;
 		}
 		else
