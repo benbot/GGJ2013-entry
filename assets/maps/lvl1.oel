@@ -257,11 +257,11 @@
     <tile x="15" y="14" id="18" />
     <tile x="15" y="15" id="24" />
   </graphic>
-  <collision exportMode="Rectangles">
-    <rect x="0" y="0" w="1024" h="64" />
-    <rect x="0" y="64" w="64" h="960" />
-    <rect x="64" y="960" w="960" h="64" />
-    <rect x="960" y="64" w="64" h="896" />
+  <collision exportMode="GridRectangles">
+    <rect x="0" y="0" w="16" h="1" />
+    <rect x="0" y="1" w="1" h="15" />
+    <rect x="1" y="15" w="15" h="1" />
+    <rect x="15" y="1" w="1" h="14" />
   </collision>
   <entities>
     <Player id="0" x="384" y="832" />

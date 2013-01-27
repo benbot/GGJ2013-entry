@@ -4,6 +4,7 @@ import com.haxepunk.Entity;
 import com.haxepunk.graphics.Image;
 import haxe.xml.Fast;
 import com.haxepunk.graphics.Tilemap;
+import com.haxepunk.graphics.TiledSpritemap;
 import com.haxepunk.masks.Grid;
 
 /**
@@ -21,7 +22,7 @@ class Level extends Entity
 	{
 		super();
 		
-		map = new Tilemap(Assets.tileSet1, 389, 389, 64, 64);
+		map = new Tilemap(Assets.tileSet1, 1024, 1024, 64, 64);
 		
 		graphic = new Image(Assets.baby);
 		
@@ -30,6 +31,9 @@ class Level extends Entity
 			fast = new Fast(Xml.parse(nme.Assets.getBytes(xml).toString()));
 		}
 		
+		type = "level";
+		layer = 1;
+		
 		loadLevel();
 	}
 	
@@ -37,14 +41,17 @@ class Level extends Entity
 	{
 		grid = new Grid(Std.parseInt(fast.node.level.att.width), Std.parseInt(fast.node.level.att.height), 64, 64);
 		
-		var tileX:Int = 0;
-		var tileY:Int = 0;
-		x = y = 0;
-		for (node in fast.nodes.graphic)
+		for (node in fast.node.level.node.graphic.nodes.tile)
 		{
 			map.setTile(Std.parseInt(node.att.x), Std.parseInt(node.att.y), Std.parseInt(node.att.id));
 		}
+		
+		for (node in fast.node.level.node.collision.nodes.rect)
+		{
+			grid.setRect(Std.parseInt(node.att.x), Std.parseInt(node.att.y), Std.parseInt(node.att.w), Std.parseInt(node.att.h));
+		}
 		graphic = map;
+		mask = grid;
 	}
 	
 }

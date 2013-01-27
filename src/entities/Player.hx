@@ -65,9 +65,9 @@ class Player extends Entity
 		this.x += (speedVec.x * HXP.elapsed) * x;
 		this.y += (speedVec.y * HXP.elapsed) * y;
 		
-		if (collideTypes("solid", x, y) != null)
+		if (collideTypes("level", x, y) != null)
 		{
-			this.x = tempX;
+			this.x = tempX; 
 			this.y = tempY;
 		}
 	}

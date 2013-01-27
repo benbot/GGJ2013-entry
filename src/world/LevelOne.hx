@@ -18,7 +18,9 @@ class LevelOne extends World
 	{
 		super();
 		
+		
 		go = new Level(Assets.lvl, Assets.tileSet1);
 		add(go);
+		add(new Player(300, 300));
 	}
 }
