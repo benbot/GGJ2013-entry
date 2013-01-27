@@ -104,6 +104,26 @@ class ApplicationMain {
             return Assets.getBitmapData ("graphics/baby.png");
          
 		
+		if (inName=="graphics/Door/doorsprite.png")
+			 
+            return Assets.getBitmapData ("graphics/Door/doorsprite.png");
+         
+		
+		if (inName=="graphics/Door/doorsprite2.png")
+			 
+            return Assets.getBitmapData ("graphics/Door/doorsprite2.png");
+         
+		
+		if (inName=="graphics/Door/doorsprite3.png")
+			 
+            return Assets.getBitmapData ("graphics/Door/doorsprite3.png");
+         
+		
+		if (inName=="graphics/Door/doorsprite4.png")
+			 
+            return Assets.getBitmapData ("graphics/Door/doorsprite4.png");
+         
+		
 		if (inName=="graphics/PUKEsprite.png")
 			 
             return Assets.getBitmapData ("graphics/PUKEsprite.png");
@@ -224,6 +244,10 @@ class ApplicationMain {
 }
 
 class NME_graphics_baby_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
+class NME_graphics_door_doorsprite_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
+class NME_graphics_door_doorsprite2_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
+class NME_graphics_door_doorsprite3_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
+class NME_graphics_door_doorsprite4_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
 class NME_graphics_pukesprite_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
 class NME_graphics_rock_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
 class NME_graphics_sidebaby_png extends nme.display.BitmapData { public function new () { super (0, 0); } }

@@ -42,12 +42,14 @@ class Level extends Entity
 		type = "level";
 		layer = 5;
 		
+		collidable = false;
+		
 		loadLevel();
 	}
 	
 	public function loadLevel()
 	{
-		grid = new Grid(Std.parseInt(fast.node.level.att.width), Std.parseInt(fast.node.level.att.height), 64, 64);
+		grid = new Grid(1024, 1024, 64, 64);
 		
 		for (node in fast.node.level.node.graphic.nodes.tile)
 		{
@@ -70,6 +72,7 @@ class Level extends Entity
 		
 		graphic = map;
 		mask = grid;
+		
 	}
 	
 }

@@ -35,6 +35,7 @@ class Turret extends Entity
 		sprite.play("stand");
 		layer = 1;
 		toss = new Sfx(Assets.turretToss);
+		toss.volume = 50;
 	}
 	
 	public function shoot()

@@ -20,7 +20,6 @@ class LevelOne extends World
 		super();
 		
 		go = new Level(Assets.lvl, Assets.tileSet1, this);
-		add(new Turret(0, 0));
 		add(go);
 		
 	}

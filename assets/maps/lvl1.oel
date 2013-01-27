@@ -264,18 +264,6 @@
     <rect x="15" y="1" w="1" h="14" />
   </collision>
   <entities>
-    <Player id="0" x="448" y="704" />
-    <Turret id="1" x="512" y="704" />
-    <Turret id="2" x="512" y="640" />
-    <Turret id="3" x="512" y="768" />
-    <Turret id="4" x="512" y="832" />
-    <Turret id="5" x="448" y="832" />
-    <Turret id="6" x="384" y="832" />
-    <Turret id="7" x="384" y="768" />
-    <Turret id="8" x="384" y="704" />
-    <Turret id="9" x="384" y="640" />
-    <Turret id="10" x="448" y="640" />
-    <Turret id="11" x="448" y="704" />
-    <Turret id="12" x="448" y="768" />
+    <Player id="0" x="512" y="640" />
   </entities>
 </level>

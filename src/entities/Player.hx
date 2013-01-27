@@ -39,17 +39,20 @@ class Player extends Entity
 		sprite.add ("walkUp", [0, 2, 1, 2], 4, true);
 		sprite.add("stand", [5], 0, false);
 		sprite.scale = .2;
+		sprite.smooth = true;
+		sprite2.smooth = true;
 		graphic = sprite;
 		sprite.play("stand");
 		
 		x = posX;
 		y = posY;
 		
+		
 		type = "player";
 		
 		layer = 0;
 		
-		setHitbox(64, 64);
+		setHitbox(30, 30);
 		
 		collidable = true;
 		
@@ -65,7 +68,7 @@ class Player extends Entity
 		this.x += (speedVec.x * HXP.elapsed) * x;
 		this.y += (speedVec.y * HXP.elapsed) * y;
 		
-		if (collideTypes("levdel", x, y) != null)
+		if (collideTypes("level", x, y) != null)
 		{
 			this.x = tempX; 
 			this.y = tempY;
@@ -184,7 +187,6 @@ class Player extends Entity
 		
 		if (health <= 0)
 		{
-			trace("dead");
 			//TODO HXP.world = new GameOver();
 		}
 		
