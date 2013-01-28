@@ -19,8 +19,7 @@ class LevelOne extends World
 	{
 		super();
 		
-		go = new Level(Assets.lvl, Assets.tileSet1, this);
+		go = new Level(Assets.lvl, this);
 		add(go);
-		
 	}
 }

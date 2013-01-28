@@ -5,6 +5,7 @@ import com.haxepunk.utils.Input;
 import com.haxepunk.utils.Key;
 import world.LevelOne;
 import world.TestWorld;
+import com.haxepunk.Sfx;
 
 /**
  * ...
@@ -16,10 +17,13 @@ class Main extends Engine
 	public static inline var screenX = 800;
 	public static inline var screenY = 600;
 	public static inline var clearColor = 0x200220;
+	public static var song:Sfx;
 	
 	public function new()
 	{
 		super(screenX, screenY, 61);
+		
+		song = new Sfx("music/music.wav");
 		
 		Input.define("up", [Key.W, Key.UP]);
 		Input.define("down", [Key.S, Key.DOWN]);
@@ -45,5 +49,7 @@ class Main extends Engine
 		HXP.screen.color = clearColor;
 		HXP.screen.scale = 1;
 		HXP.world = new LevelOne(Assets.lvl); //TODO: Add a world... derp
+		song.volume = 50;
+		song.loop();
 	}
 }

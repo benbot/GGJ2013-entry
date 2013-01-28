@@ -14,7 +14,7 @@ import entities.Player;
 
 class Bullet extends Entity
 {
-	private var speed = 125;
+	private var speed = 135;
 	private var directionVec:Vector;
 	
 	public function new(x:Float, y:Float, directionVec:Vector, asset:String) 

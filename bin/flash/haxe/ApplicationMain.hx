@@ -184,6 +184,11 @@ class ApplicationMain {
 			 return Assets.getText ("maps/lvl1.oel");
          
 		
+		if (inName=="maps/startingarea.oel")
+			 
+			 return Assets.getText ("maps/startingarea.oel");
+         
+		
 		if (inName=="gfx/debug/console_debug.png")
 			 
             return Assets.getBitmapData ("gfx/debug/console_debug.png");
@@ -260,6 +265,7 @@ class NME_graphics_wall4_png extends nme.display.BitmapData { public function ne
 class NME_sound_button_wav extends nme.media.Sound { }
 class NME_sound_hurglurgl_throw_wav extends nme.media.Sound { }
 class NME_maps_lvl1_oel extends nme.utils.ByteArray { }
+class NME_maps_startingarea_oel extends nme.utils.ByteArray { }
 class NME_gfx_debug_console_debug_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
 class NME_gfx_debug_console_logo_png extends nme.display.BitmapData { public function new () { super (0, 0); } }
 class NME_gfx_debug_console_output_png extends nme.display.BitmapData { public function new () { super (0, 0); } }

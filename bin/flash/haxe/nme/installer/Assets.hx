@@ -75,6 +75,8 @@ class Assets {
 			resourceTypes.set ("sound/hurglurgl-throw.wav", "sound");
 			resourceClasses.set ("maps/lvl1.oel", NME_maps_lvl1_oel);
 			resourceTypes.set ("maps/lvl1.oel", "text");
+			resourceClasses.set ("maps/startingarea.oel", NME_maps_startingarea_oel);
+			resourceTypes.set ("maps/startingarea.oel", "text");
 			resourceClasses.set ("gfx/debug/console_debug.png", NME_gfx_debug_console_debug_png);
 			resourceTypes.set ("gfx/debug/console_debug.png", "image");
 			resourceClasses.set ("gfx/debug/console_logo.png", NME_gfx_debug_console_logo_png);

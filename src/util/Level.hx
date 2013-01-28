@@ -2,6 +2,7 @@ package util;
 
 import com.haxepunk.Entity;
 import com.haxepunk.graphics.Image;
+import entities.Collide;
 import entities.enemies.Turret;
 import entities.Player;
 import haxe.xml.Fast;
@@ -11,6 +12,7 @@ import com.haxepunk.masks.Grid;
 import com.haxepunk.HXP;
 import world.LevelOne;
 import world.TestWorld;
+import entities.Door;
 
 /**
  * ...
@@ -24,13 +26,13 @@ class Level extends Entity
 	var grid:Grid;
 	var level:LevelOne;
 	
-	public function new(xml:Dynamic, filePath:String, level:LevelOne) 
+	public function new(xml:Dynamic, level:LevelOne) 
 	{
 		super();
 		
 		this.level = level;
 		
-		map = new Tilemap(Assets.tileSet1, 1024, 1024, 64, 64);
+		map = Assets.map;
 		
 		graphic = new Image(Assets.baby);
 		
@@ -39,12 +41,12 @@ class Level extends Entity
 			fast = new Fast(Xml.parse(nme.Assets.getBytes(xml).toString()));
 		}
 		
-		type = "level";
 		layer = 5;
 		
 		collidable = false;
 		
 		loadLevel();
+		
 	}
 	
 	public function loadLevel()
@@ -69,10 +71,27 @@ class Level extends Entity
 			level.add(new Turret(Std.parseInt(node.att.x), Std.parseInt(node.att.y)));
 		}
 		
+		for (node in fast.node.level.node.entities.nodes.topDoor)
+		{
+			level.add(new Door(Std.parseInt(node.att.x), Std.parseInt(node.att.y), new LevelOne(node.att.toLevel), 0));
+		}
+		
+		for (node in fast.node.level.node.entities.nodes.botDoor)
+		{
+			level.add(new Door(Std.parseInt(node.att.x), Std.parseInt(node.att.y), new LevelOne(node.att.toLevel), 1));
+		}
+		
+		for (node in fast.node.level.node.entities.nodes.topDoor)
+		{
+			level.add(new Door(Std.parseInt(node.att.x), Std.parseInt(node.att.y), new LevelOne(node.att.toLevel), 2));
+		}
+		
+		for (node in fast.node.level.node.entities.nodes.collide)
+		{
+			level.add(new Collide(Std.parseInt(node.att.x), Std.parseInt(node.att.y)));
+		}
 		
 		graphic = map;
-		mask = grid;
-		
 	}
 	
 }
